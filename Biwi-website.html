@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIWI - Business Institute of the West Indies | Éducation Commerciale de Premier Ordre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a4b8c;
+            --secondary: #e63946;
+            --accent: #2a9d8f;
+            --light: #f1faee;
+            --dark: #1d3557;
+            --gray: #8d99ae;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section - REDUCED HEIGHT */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 75, 140, 0.85) 0%, rgba(26, 75, 140, 0.7) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 80px 0; /* REDUCED FROM 150px */
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem; /* SLIGHTLY SMALLER */
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem; /* SLIGHTLY SMALLER */
+            margin: 0 auto 30px; /* REDUCED MARGIN */
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #c1121f;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Button container for mobile centering */
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Center all buttons on mobile */
+        .center-on-mobile {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0; /* REDUCED SECTION PADDING */
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px; /* REDUCED MARGIN */
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem; /* SLIGHTLY SMALLER */
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-img {
+            height: 200px; /* SLIGHTLY SMALLER */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .program-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+
+        .program-content {
+            padding: 25px;
+        }
+
+        .program-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .program-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 5px;
+            color: var(--accent);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 75, 140, 0.1);
+            outline: none;
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Donation Section */
+        .donation {
+            background: linear-gradient(135deg, var(--light) 0%, #e8f4f8 100%);
+            text-align: center;
+        }
+
+        .donation p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+
+        .donation-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .donation-option {
+            background-color: white;
+            padding: 25px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            width: 160px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .donation-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .donation-option.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .donation-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* Payment Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: modalAppear 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes modalAppear {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .payment-option {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .payment-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .payment-option.active {
+            border-color: var(--primary);
+            background-color: rgba(26, 75, 140, 0.05);
+        }
+
+        .payment-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .payment-details {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        .payment-info {
+            margin-bottom: 20px;
+        }
+
+        .payment-info h4 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .payment-info p {
+            margin-bottom: 10px;
+        }
+
+        .payment-form {
+            margin-top: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .test-notice {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Comments Section */
+        .comments-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comment-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+        }
+
+        .comments-list {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .comment {
+            padding: 25px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .comment-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Alumni Section */
+        .alumni {
+            background-color: var(--light);
+        }
+
+        .alumni-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .alumni-photo {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .alumni-photo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .alumni-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .alumni-info {
+            padding: 20px;
+        }
+
+        .alumni-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .alumni-promotion {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .alumni-caption {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .reactions {
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .reaction-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            color: var(--gray);
+        }
+
+        .reaction-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .reaction-btn.liked {
+            color: var(--secondary);
+        }
+
+        .reaction-count {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .add-photo-btn {
+            display: block;
+            margin: 30px auto 0;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-photo-btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* Photo Upload Modal */
+        .photo-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .photo-modal-content {
+            background-color: white;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: modalAppear 0.4s ease;
+        }
+
+        .photo-modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .photo-modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close-photo-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .photo-modal-body {
+            padding: 30px;
+        }
+
+        .photo-preview {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #0d1f3d 100%);
+            color: white;
+            padding: 80px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            color: var(--light);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Live Chat */
+        .live-chat {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chat-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary) 0%, #c1121f 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(230, 57, 70, 0.4);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 7px 25px rgba(230, 57, 70, 0.6);
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 20px;
+            max-width: 80%;
+            line-height: 1.4;
+        }
+
+        .message.bot {
+            background-color: #f0f0f0;
+            border-top-left-radius: 5px;
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            border-top-right-radius: 5px;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+
+        .chat-input button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chat-input button:hover {
+            transform: scale(1.05);
+        }
+
+        /* ========== RESPONSIVE STYLES ========== */
+        @media (max-width: 1200px) {
+            .container {
+                width: 95%;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero {
+                padding: 70px 0; /* REDUCED MOBILE HEIGHT */
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Header & Navigation */
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                margin-top: 15px;
+                background-color: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 8px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            /* Hero Section - MOBILE BUTTON FIX */
+            .hero {
+                padding: 60px 0; /* FURTHER REDUCED MOBILE HEIGHT */
+                background-attachment: scroll;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 !important; /* REMOVE ANY MARGIN */
+            }
+            
+            .btn-outline {
+                margin-left: 0 !important; /* ENSURE NO MARGIN ON MOBILE */
+            }
+
+            /* Center all buttons on mobile */
+            .center-on-mobile {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            /* Sections */
+            section {
+                padding: 60px 0; /* REDUCED MOBILE PADDING */
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
+            
+            /* Programs */
+            .programs-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .program-card {
+                margin-bottom: 20px;
+            }
+            
+            /* Stats */
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .stat-item {
+                padding: 15px;
+            }
+            
+            /* Contact */
+            .contact-info, .contact-form {
+                padding: 25px;
+            }
+            
+            .contact-item {
+                margin-bottom: 20px;
+            }
+            
+            /* Donation */
+            .donation-options {
+                gap: 15px;
+            }
+            
+            .donation-option {
+                width: 140px;
+                padding: 20px 15px;
+            }
+            
+            .donation-amount {
+                font-size: 1.5rem;
+            }
+            
+            /* Alumni Gallery */
+            .alumni-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Payment Modal */
+            .modal {
+                padding: 10px;
+                align-items: flex-start;
+            }
+            
+            .modal-content {
+                max-height: 95vh;
+                margin-top: 20px;
+            }
+            
+            .modal-header {
+                padding: 15px 20px;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.3rem;
+            }
+            
+            .modal-body {
+                padding: 20px;
+            }
+            
+            .payment-options {
+                gap: 15px;
+            }
+            
+            .payment-option {
+                padding: 15px;
+            }
+            
+            .payment-icon {
+                font-size: 2rem;
+            }
+            
+            .payment-details {
+                padding: 20px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            /* Comments */
+            .comment-form, .comments-list {
+                padding: 25px;
+            }
+            
+            .comment-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .comment-date {
+                margin-top: 5px;
+            }
+            
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-column h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            /* Live Chat */
+            .live-chat {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .chat-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .chat-window {
+                width: 300px;
+                height: 400px;
+                right: -10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 0 10px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                padding: 50px 0; /* EVEN SMALLER ON VERY SMALL DEVICES */
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .donation-option {
+                width: 100%;
+                max-width: 120px;
+            }
+            
+            .modal-body {
+                padding: 15px;
+            }
+            
+            .payment-option {
+                padding: 12px;
+            }
+            
+            .payment-icon {
+                font-size: 1.8rem;
+            }
+            
+            .chat-window {
+                width: 280px;
+                right: -15px;
+            }
+            
+            .copyright p {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+            
+            .donation-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .donation-option {
+                max-width: 200px;
+                width: 100%;
+            }
+            
+            .chat-window {
+                width: 260px;
+            }
+        }
+
+        /* Touch device improvements */
+        @media (hover: none) {
+            .program-card:hover {
+                transform: none;
+            }
+            
+            .donation-option:hover {
+                transform: none;
+            }
+            
+            .payment-option:hover {
+                transform: none;
+            }
+            
+            .btn:hover {
+                transform: none;
+            }
+            
+            .alumni-photo:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">BIWI</div>
+                <div class="logo-text">
+                    <h1><span>BIWI</span> Business Institute</h1>
+                    <p>of the West Indies</p>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#programs">Programmes</a></li>
+                    <li><a href="#alumni">Anciens</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#donate" class="btn">Soutenir BIWI</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Former les Leaders d'Affaires de Demain</h2>
+                <p>À BIWI, nous offrons une éducation commerciale de classe mondiale axée sur l'innovation, l'éthique et l'application pratique dans la région des Caraïbes.</p>
+                <div class="hero-buttons">
+                    <a href="#programs" class="btn">Explorer les Programmes</a>
+                    <a href="#contact" class="btn btn-outline">Planifier une Visite</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>À Propos de BIWI</h2>
+                <p>Établi en 1993, nous nous engageons à l'excellence dans l'éducation commerciale et le développement du leadership.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Notre Mission et Vision</h3>
+                    <p>Le Business Institute of the West Indies (BIWI) se consacre à développer la prochaine génération de leaders d'affaires grâce à une éducation innovante, des principes éthiques et une expérience pratique.</p>
+                    <p>Nous envisageons une région des Caraïbes transformée par des professionnels d'affaires éthiques, innovants et compétitifs à l'échelle mondiale qui stimulent le développement économique durable.</p>
+                    <p>Notre corps professoral distingué comprend des experts de l'industrie et des universitaires accomplis qui apportent des perspectives réelles en classe, garantissant que nos étudiants reçoivent à la fois des connaissances théoriques et des compétences pratiques.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10,000+</span>
+                            <span class="stat-text">Anciens Diplômés</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-text">Ans d'Excellence</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-text">Taux d'Emploi</span>
+                        </div>
+                    </div>
+                    
+                    <div class="center-on-mobile">
+                        <a href="#contact" class="btn" style="margin-top: 20px;">En Savoir Plus</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Campus BIWI">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Programmes</h2>
+                <p>Une éducation commerciale complète conçue pour répondre aux exigences du marché mondial actuel.</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="program-content">
+                        <h3>Administration des Affaires</h3>
+                        <p>Notre programme phare fournit une base complète en principes commerciaux, pratiques de gestion et prise de décision stratégique.</p>
+                        <div class="center-on-mobile">
+                            <a href="#" class="btn">Détails du Programme</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1581093458791-8a6b6d47d0b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="program-content">
+                        <h3>Secrétariat Exécutif</h3>
+                        <p>Développez des compétences administratives et organisationnelles avancées essentielles pour les rôles de soutien exécutif dans les environnements commerciaux modernes.</p>
+                        <div class="center-on-mobile">
+                            <a href="#" class="btn">Détails du Programme</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="program-content">
+                        <h3>Informatique de Bureau</h3>
+                        <p>Maîtrisez les technologies de bureau essentielles et les applications logicielles pour améliorer la productivité et l'efficacité des opérations commerciales.</p>
+                        <div class="center-on-mobile">
+                            <a href="#" class="btn">Détails du Programme</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section id="alumni" class="alumni">
+        <div class="container">
+            <div class="section-title">
+                <h2>Anciens de BIWI</h2>
+                <p>Découvrez les souvenirs et réussites de nos anciens élèves à travers les années</p>
+            </div>
+            <div class="alumni-gallery" id="alumniGallery">
+                <!-- Alumni photos will be loaded here by JavaScript -->
+            </div>
+            <button class="add-photo-btn" id="addPhotoBtn">Ajouter une Photo</button>
+        </div>
+    </section>
+
+    <!-- Photo Upload Modal -->
+    <div class="photo-modal" id="photoModal">
+        <div class="photo-modal-content">
+            <div class="photo-modal-header">
+                <h3>Ajouter une Photo d'Ancien</h3>
+                <button class="close-photo-modal" id="closePhotoModal">&times;</button>
+            </div>
+            <div class="photo-modal-body">
+                <form id="photoForm">
+                    <div class="form-group">
+                        <label for="alumni-name">Nom de l'Ancien</label>
+                        <input type="text" id="alumni-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alumni-promotion">Promotion</label>
+                        <input type="text" id="alumni-promotion" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alumni-caption">Légende</label>
+                        <textarea id="alumni-caption" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="alumni-photo">Photo</label>
+                        <input type="file" id="alumni-photo" class="form-control" accept="image/*" required>
+                        <img id="photoPreview" class="photo-preview" src="" alt="Aperçu de la photo">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Ajouter la Photo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-Nous</h2>
+                <p>Entrez en contact avec notre équipe des admissions ou planifiez une visite du campus.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Entrez en Contact</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>Delmas 77, Port-au-Prince, Haïti</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+(509) 2940-2277</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@biwi.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Heures de Bureau</h4>
+                            <p>Lundi - Vendredi: 8:00 AM - 6:00 PM<br>Samedi: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envoyez-nous un Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom Complet</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <div class="center-on-mobile">
+                            <button type="submit" class="btn" style="width: 100%; max-width: 300px;">Envoyer le Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="donation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Soutenez BIWI</h2>
+                <p>Vos contributions généreuses nous aident à fournir des bourses, à améliorer les installations et à poursuivre notre mission d'excellence dans l'éducation commerciale.</p>
+            </div>
+            <p>Rejoignez nos anciens et amis pour soutenir la prochaine génération de leaders d'affaires caribéens. Chaque don fait une différence dans le parcours éducatif d'un étudiant.</p>
+            <div class="donation-options">
+                <div class="donation-option" data-amount="50">
+                    <div class="donation-amount">$50</div>
+                    <div>Ressources Étudiantes</div>
+                </div>
+                <div class="donation-option" data-amount="100">
+                    <div class="donation-amount">$100</div>
+                    <div>Fonds de Bourses</div>
+                </div>
+                <div class="donation-option active" data-amount="250">
+                    <div class="donation-amount">$250</div>
+                    <div>Amélioration des Installations</div>
+                </div>
+                <div class="donation-option" data-amount="500">
+                    <div class="donation-amount">$500</div>
+                    <div>Événements Étudiants</div>
+                </div>
+                <div class="donation-option" data-amount="1000">
+                    <div class="donation-amount">$1,000</div>
+                    <div>Dotation de Programme</div>
+                </div>
+            </div>
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div class="form-group">
+                    <label for="custom-amount">Ou entrez un montant personnalisé (USD):</label>
+                    <input type="number" id="custom-amount" class="form-control" placeholder="Entrez le montant en USD">
+                </div>
+                <div class="center-on-mobile">
+                    <button class="btn" style="width: 100%; max-width: 300px;" id="donateButton">Faire un Don Maintenant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Complétez Votre Don</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="test-notice">
+                    <i class="fas fa-info-circle"></i> Ceci est une interface de paiement de démonstration. Aucune transaction réelle ne sera traitée.
+                </div>
+                
+                <div class="payment-summary">
+                    <h4>Résumé du Don</h4>
+                    <p>Montant: <strong id="paymentAmount">$250.00 USD</strong></p>
+                    <p>Objectif: Soutenir les programmes éducatifs de BIWI et les bourses étudiantes</p>
+                    <p>Tous les dons sont déductibles d'impôt et seront accusés réception par un reçu officiel.</p>
+                </div>
+                
+                <h4>Sélectionnez le Mode de Paiement</h4>
+                <div class="payment-options">
+                    <div class="payment-option" data-method="moncash">
+                        <div class="payment-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h5>MonCash</h5>
+                        <p>Paiement Mobile</p>
+                    </div>
+                    <div class="payment-option" data-method="credit">
+                        <div class="payment-icon">
+                            <i class="far fa-credit-card"></i>
+                        </div>
+                        <h5>Carte de Crédit/Débit</h5>
+                        <p>Visa, Mastercard</p>
+                    </div>
+                    <div class="payment-option" data-method="bank">
+                        <div class="payment-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h5>Virement Bancaire</h5>
+                        <p>Transfert Bancaire</p>
+                    </div>
+                    <div class="payment-option" data-method="zelle">
+                        <div class="payment-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h5>Zelle</h5>
+                        <p>Transfert Bancaire US</p>
+                    </div>
+                </div>
+                
+                <div class="payment-details" id="moncashDetails">
+                    <div class="payment-info">
+                        <h4>Instructions de Paiement MonCash</h4>
+                        <p>Pour compléter votre don via MonCash:</p>
+                        <ol>
+                            <li>Ouvrez votre application mobile MonCash</li>
+                            <li>Envoyez le paiement à: <strong>+509 48 00 0000</strong></li>
+                            <li>Utilisez la référence: <strong>BIWI-DONATION</strong></li>
+                            <li>Entrez le montant: <strong id="moncashAmount">$250.00</strong></li>
+                            <li>Complétez la transaction</li>
+                        </ol>
+                        <p>Après avoir envoyé le paiement, veuillez confirmer ci-dessous avec vos coordonnées.</p>
+                    </div>
+                    <div class="payment-form">
+                        <div class="form-group">
+                            <label for="moncash-number">Votre Numéro MonCash</label>
+                            <input type="text" id="moncash-number" class="form-control" placeholder="Entrez votre numéro MonCash">
+                        </div>
+                        <div class="form-group">
+                            <label for="moncash-transaction">ID de Transaction (Optionnel)</label>
+                            <input type="text" id="moncash-transaction" class="form-control" placeholder="Entrez l'ID de transaction si disponible">
+                        </div>
+                        <div class="form-group">
+                            <label for="moncash-email">Votre Email pour le Reçu</label>
+                            <input type="email" id="moncash-email" class="form-control" placeholder="Entrez votre adresse email">
+                        </div>
+                        <button class="btn" style="width: 100%;" id="confirmMoncash">Confirmer le Paiement</button>
+                    </div>
+                </div>
+                
+                <div class="payment-details" id="creditDetails">
+                    <div class="payment-info">
+                        <h4>Paiement par Carte de Crédit/Débit</h4>
+                        <p>Traitez votre don en toute sécurité en utilisant votre carte de crédit ou de débit. Nous acceptons Visa, Mastercard et American Express.</p>
+                        <p>Votre paiement est traité via notre passerelle de paiement sécurisée avec un cryptage de niveau bancaire.</p>
+                    </div>
+                    <div class="payment-form">
+                        <div class="form-group">
+                            <label for="card-number">Numéro de Carte</label>
+                            <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="card-expiry">Date d'Expiration</label>
+                                <input type="text" id="card-expiry" class="form-control" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvc">CVC</label>
+                                <input type="text" id="card-cvc" class="form-control" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-name">Nom sur la Carte</label>
+                            <input type="text" id="card-name" class="form-control" placeholder="Jean Dupont">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-email">Email pour le Reçu</label>
+                            <input type="email" id="card-email" class="form-control" placeholder="Entrez votre adresse email">
+                        </div>
+                        <button class="btn" style="width: 100%;" id="confirmCredit">Traiter le Paiement</button>
+                    </div>
+                </div>
+                
+                <div class="payment-details" id="bankDetails">
+                    <div class="payment-info">
+                        <h4>Instructions de Virement Bancaire</h4>
+                        <p>Transférez votre don directement sur notre compte bancaire en utilisant les détails suivants:</p>
+                        <p><strong>Banque:</strong> Unibank Haïti</p>
+                        <p><strong>Nom du Compte:</strong> Business Institute of the West Indies</p>
+                        <p><strong>Numéro de Compte:</strong> 0123456789</p>
+                        <p><strong>SWIFT/BIC:</strong> UNIHHTPP</p>
+                        <p><strong>Adresse:</strong> 123 Rue Principale, Port-au-Prince, Haïti</p>
+                        <p><strong>Montant:</strong> <span id="bankAmount">$250.00 USD</span></p>
+                        <p><strong>Important:</strong> Veuillez inclure la référence: <strong>BIWI-DONATION</strong> afin que nous puissions accuser réception de votre don.</p>
+                        <p>Les transferts internationaux peuvent prendre 2 à 5 jours ouvrables à traiter.</p>
+                    </div>
+                    <div class="payment-form">
+                        <div class="form-group">
+                            <label for="bank-reference">Référence de Transfert</label>
+                            <input type="text" id="bank-reference" class="form-control" placeholder="Entrez votre référence de transfert bancaire">
+                        </div>
+                        <div class="form-group">
+                            <label for="bank-email">Votre Email pour Confirmation</label>
+                            <input type="email" id="bank-email" class="form-control" placeholder="Entrez votre adresse email">
+                        </div>
+                        <div class="form-group">
+                            <label for="bank-date">Date de Transfert Prévue</label>
+                            <input type="date" id="bank-date" class="form-control">
+                        </div>
+                        <button class="btn" style="width: 100%;" id="confirmBank">Confirmer les Détails du Transfert</button>
+                    </div>
+                </div>
+                
+                <div class="payment-details" id="zelleDetails">
+                    <div class="payment-info">
+                        <h4>Instructions de Paiement Zelle</h4>
+                        <p>Pour faire un don via Zelle:</p>
+                        <ol>
+                            <li>Ouvrez votre application bancaire ou Zelle</li>
+                            <li>Envoyez le paiement à: <strong>donations@biwi.edu</strong></li>
+                            <li>Incluez la note: <strong>BIWI Donation</strong></li>
+                            <li>Entrez le montant: <strong id="zelleAmount">$250.00</strong></li>
+                        </ol>
+                        <p>Les paiements Zelle sont généralement traités en quelques minutes. Après envoi, veuillez confirmer vos coordonnées ci-dessous.</p>
+                    </div>
+                    <div class="payment-form">
+                        <div class="form-group">
+                            <label for="zelle-email">Votre Email</label>
+                            <input type="email" id="zelle-email" class="form-control" placeholder="Entrez l'email utilisé pour Zelle">
+                        </div>
+                        <div class="form-group">
+                            <label for="zelle-name">Votre Nom Complet</label>
+                            <input type="text" id="zelle-name" class="form-control" placeholder="Entrez votre nom tel qu'il apparaît dans Zelle">
+                        </div>
+                        <div class="form-group">
+                            <label for="zelle-phone">Votre Numéro de Téléphone</label>
+                            <input type="tel" id="zelle-phone" class="form-control" placeholder="Entrez votre numéro de téléphone">
+                        </div>
+                        <button class="btn" style="width: 100%;" id="confirmZelle">Confirmer le Paiement</button>
+                    </div>
+                </div>
+                
+                <div class="payment-info" style="margin-top: 30px; padding: 20px; background: #f0f8ff; border-radius: 8px;">
+                    <h4>Besoin d'Aide?</h4>
+                    <p>Si vous rencontrez des problèmes avec votre don ou avez des questions, veuillez contacter notre bureau de développement:</p>
+                    <p><strong>Email:</strong> donations@biwi.edu</p>
+                    <p><strong>Téléphone:</strong> +(509) 2940-2277 poste 2</p>
+                    <p>Notre équipe est disponible du lundi au vendredi, de 8:00 AM à 5:00 PM EST pour vous assister.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comments Section -->
+    <section id="comments">
+        <div class="container">
+            <div class="section-title">
+                <h2>Retour de la Communauté</h2>
+                <p>Découvrez les témoignages de nos étudiants, anciens et supporters sur leur expérience BIWI.</p>
+            </div>
+            <div class="comments-container">
+                <div class="comment-form">
+                    <h3>Partagez Votre Expérience</h3>
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <label for="comment-name">Votre Nom</label>
+                            <input type="text" id="comment-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment-text">Votre Commentaire</label>
+                            <textarea id="comment-text" class="form-control" required></textarea>
+                        </div>
+                        <div class="center-on-mobile">
+                            <button type="submit" class="btn" style="width: 100%; max-width: 300px;">Publier le Commentaire</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="comments-list" id="commentsList">
+                    <h3>Témoignages Récents</h3>
+                    <!-- Comments will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BIWI</h3>
+                    <p>Business Institute of the West Indies - Former les futurs leaders d'affaires grâce à l'excellence en éducation depuis 1993.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À Propos de BIWI</a></li>
+                        <li><a href="#programs">Programmes Académiques</a></li>
+                        <li><a href="#alumni">Anciens</a></li>
+                        <li><a href="#contact">Contactez-Nous</a></li>
+                        <li><a href="#donate">Soutenez BIWI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Programmes</h3>
+                    <ul>
+                        <li><a href="#">Administration des Affaires</a></li>
+                        <li><a href="#">Secrétariat Exécutif</a></li>
+                        <li><a href="#">Informatique de Bureau</a></li>
+                        <li><a href="#">Certificats Professionnels</a></li>
+                        <li><a href="#">Formation des Cadres</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Coordonnées</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Delmas 77, Port-au-Prince, Haïti</li>
+                        <li><i class="fas fa-phone"></i> +(509) 2940-2277</li>
+                        <li><i class="fas fa-envelope"></i> info@biwi.edu</li>
+                        <li><i class="fas fa-clock"></i> Lun-Ven: 8:00AM - 6:00PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BIWI - Business Institute of the West Indies. Tous droits réservés. | Accrédité par le Ministère de l'Éducation, Haïti</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat -->
+    <div class="live-chat">
+        <div class="chat-btn" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Support BIWI</h3>
+                <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    Bonjour! Bienvenue à BIWI. Comment pouvons-nous vous aider aujourd'hui?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Tapez votre message...">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message! Nous vous répondrons bientôt.');
+            this.reset();
+        });
+
+        // Donation Options
+        const donationOptions = document.querySelectorAll('.donation-option');
+        const customAmount = document.getElementById('custom-amount');
+        const paymentAmount = document.getElementById('paymentAmount');
+        const moncashAmount = document.getElementById('moncashAmount');
+        const bankAmount = document.getElementById('bankAmount');
+        const zelleAmount = document.getElementById('zelleAmount');
+        let selectedAmount = 250;
+
+        donationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                donationOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                selectedAmount = this.getAttribute('data-amount');
+                customAmount.value = selectedAmount;
+                updatePaymentAmounts(selectedAmount);
+            });
+        });
+
+        // Custom Donation Amount
+        customAmount.addEventListener('input', function() {
+            if (this.value) {
+                donationOptions.forEach(opt => opt.classList.remove('active'));
+                selectedAmount = this.value;
+                updatePaymentAmounts(selectedAmount);
+            }
+        });
+
+        function updatePaymentAmounts(amount) {
+            paymentAmount.textContent = `$${amount}.00 USD`;
+            moncashAmount.textContent = `$${amount}.00`;
+            bankAmount.textContent = `$${amount}.00 USD`;
+            zelleAmount.textContent = `$${amount}.00`;
+        }
+
+        // Payment Modal
+        const paymentModal = document.getElementById('paymentModal');
+        const donateButton = document.getElementById('donateButton');
+        const closeModal = document.getElementById('closeModal');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const paymentDetails = document.querySelectorAll('.payment-details');
+
+        donateButton.addEventListener('click', function() {
+            if (!selectedAmount) {
+                alert('Veuillez sélectionner ou entrer un montant de don.');
+                return;
+            }
+            paymentModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModal.addEventListener('click', function() {
+            paymentModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === paymentModal) {
+                paymentModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Payment Method Selection
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                paymentOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                const method = this.getAttribute('data-method');
+                paymentDetails.forEach(detail => {
+                    detail.classList.remove('active');
+                    if (detail.id === `${method}Details`) {
+                        detail.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Payment Confirmation Buttons
+        document.getElementById('confirmMoncash').addEventListener('click', function() {
+            processPayment('MonCash');
+        });
+
+        document.getElementById('confirmCredit').addEventListener('click', function() {
+            processPayment('Carte de Crédit');
+        });
+
+        document.getElementById('confirmBank').addEventListener('click', function() {
+            processPayment('Virement Bancaire');
+        });
+
+        document.getElementById('confirmZelle').addEventListener('click', function() {
+            processPayment('Zelle');
+        });
+
+        function processPayment(method) {
+            alert(`Merci pour votre don de $${selectedAmount} via ${method}! Ceci est une démonstration - aucun paiement réel n'a été traité.`);
+            paymentModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Reset form
+            donationOptions.forEach(opt => opt.classList.remove('active'));
+            customAmount.value = '';
+            selectedAmount = null;
+        }
+
+        // ========== ALUMNI GALLERY FUNCTIONALITY ==========
+        const alumniGallery = document.getElementById('alumniGallery');
+        const addPhotoBtn = document.getElementById('addPhotoBtn');
+        const photoModal = document.getElementById('photoModal');
+        const closePhotoModal = document.getElementById('closePhotoModal');
+        const photoForm = document.getElementById('photoForm');
+        const photoPreview = document.getElementById('photoPreview');
+        const alumniPhotoInput = document.getElementById('alumni-photo');
+
+        // Load alumni photos from localStorage
+        function loadAlumniPhotos() {
+            const savedPhotos = JSON.parse(localStorage.getItem('biwiAlumniPhotos')) || [];
+            alumniGallery.innerHTML = '';
+            
+            if (savedPhotos.length === 0) {
+                // Add some default photos if none exist
+                const defaultPhotos = [
+                    {
+                        id: 1,
+                        name: "Promotion 1993",
+                        promotion: "1993",
+                        caption: "La première promotion de BIWI - Fondateurs de notre tradition d'excellence",
+                        image: "https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        likes: 42,
+                        loves: 15
+                    },
+                    {
+                        id: 2,
+                        name: "Marie L. Joseph",
+                        promotion: "1995",
+                        caption: "Cérémonie de remise des diplômes - Un moment inoubliable",
+                        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        likes: 28,
+                        loves: 9
+                    },
+                    {
+                        id: 3,
+                        name: "Jean P. Alexandre",
+                        promotion: "1998",
+                        caption: "Notre équipe de débat qui a remporté le championnat national",
+                        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        likes: 35,
+                        loves: 12
+                    }
+                ];
+                
+                defaultPhotos.forEach(photo => {
+                    addAlumniPhotoToGallery(photo);
+                });
+                localStorage.setItem('biwiAlumniPhotos', JSON.stringify(defaultPhotos));
+            } else {
+                savedPhotos.forEach(photo => {
+                    addAlumniPhotoToGallery(photo);
+                });
+            }
+        }
+
+        // Add alumni photo to gallery
+        function addAlumniPhotoToGallery(photo) {
+            const photoElement = document.createElement('div');
+            photoElement.className = 'alumni-photo';
+            photoElement.innerHTML = `
+                <img src="${photo.image}" alt="${photo.name}" class="alumni-img">
+                <div class="alumni-info">
+                    <div class="alumni-name">${photo.name}</div>
+                    <div class="alumni-promotion">Promotion ${photo.promotion}</div>
+                    <div class="alumni-caption">${photo.caption}</div>
+                    <div class="reactions">
+                        <button class="reaction-btn like-btn" data-id="${photo.id}">
+                            <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <span class="reaction-count like-count">${photo.likes || 0}</span>
+                        <button class="reaction-btn love-btn" data-id="${photo.id}">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <span class="reaction-count love-count">${photo.loves || 0}</span>
+                    </div>
+                </div>
+            `;
+            alumniGallery.appendChild(photoElement);
+            
+            // Add event listeners for reaction buttons
+            const likeBtn = photoElement.querySelector('.like-btn');
+            const loveBtn = photoElement.querySelector('.love-btn');
+            
+            likeBtn.addEventListener('click', function() {
+                handleReaction(photo.id, 'like');
+            });
+            
+            loveBtn.addEventListener('click', function() {
+                handleReaction(photo.id, 'love');
+            });
+        }
+
+        // Handle reaction clicks
+        function handleReaction(photoId, type) {
+            const savedPhotos = JSON.parse(localStorage.getItem('biwiAlumniPhotos')) || [];
+            const photoIndex = savedPhotos.findIndex(photo => photo.id == photoId);
+            
+            if (photoIndex !== -1) {
+                if (type === 'like') {
+                    savedPhotos[photoIndex].likes = (savedPhotos[photoIndex].likes || 0) + 1;
+                } else if (type === 'love') {
+                    savedPhotos[photoIndex].loves = (savedPhotos[photoIndex].loves || 0) + 1;
+                }
+                
+                localStorage.setItem('biwiAlumniPhotos', JSON.stringify(savedPhotos));
+                loadAlumniPhotos(); // Reload to update counts
+            }
+        }
+
+        // Photo upload preview
+        alumniPhotoInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    photoPreview.src = e.target.result;
+                    photoPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Open photo modal
+        addPhotoBtn.addEventListener('click', function() {
+            photoModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close photo modal
+        closePhotoModal.addEventListener('click', function() {
+            photoModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            photoForm.reset();
+            photoPreview.style.display = 'none';
+        });
+
+        // Close photo modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === photoModal) {
+                photoModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                photoForm.reset();
+                photoPreview.style.display = 'none';
+            }
+        });
+
+        // Handle photo form submission
+        photoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('alumni-name').value;
+            const promotion = document.getElementById('alumni-promotion').value;
+            const caption = document.getElementById('alumni-caption').value;
+            const file = alumniPhotoInput.files[0];
+            
+            if (!file) {
+                alert('Veuillez sélectionner une photo.');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const newPhoto = {
+                    id: Date.now(),
+                    name: name,
+                    promotion: promotion,
+                    caption: caption,
+                    image: e.target.result,
+                    likes: 0,
+                    loves: 0
+                };
+                
+                const savedPhotos = JSON.parse(localStorage.getItem('biwiAlumniPhotos')) || [];
+                savedPhotos.push(newPhoto);
+                localStorage.setItem('biwiAlumniPhotos', JSON.stringify(savedPhotos));
+                
+                addAlumniPhotoToGallery(newPhoto);
+                
+                photoModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                photoForm.reset();
+                photoPreview.style.display = 'none';
+                
+                alert('Photo ajoutée avec succès!');
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // ========== COMMENTS FUNCTIONALITY ==========
+        const commentsList = document.getElementById('commentsList');
+
+        // Load comments from localStorage
+        function loadComments() {
+            const savedComments = JSON.parse(localStorage.getItem('biwiComments')) || [];
+            commentsList.innerHTML = '<h3>Témoignages Récents</h3>';
+            
+            if (savedComments.length === 0) {
+                // Add default comments if none exist
+                const defaultComments = [
+                    {
+                        id: 1,
+                        name: "Sarah Jean-Baptiste",
+                        date: "15 Juin 2025",
+                        text: "BIWI m'a fourni les compétences et le réseau dont j'avais besoin pour lancer ma carrière en gestion d'entreprise. Les professeurs sont des mentors incroyables qui se soucient vraiment de la réussite des étudiants!"
+                    },
+                    {
+                        id: 2,
+                        name: "Pierre Duval",
+                        date: "28 Mai 2025",
+                        text: "En tant qu'ancien, je suis fier de soutenir BIWI. Le nouveau centre d'entrepreneuriat est fantastique et fournit aux étudiants actuels des ressources dont nous ne pouvions que rêver à mon époque."
+                    },
+                    {
+                        id: 3,
+                        name: "Marie L. Charles",
+                        date: "10 Avril 2025",
+                        text: "Le département des services de carrière m'a aidée à obtenir un stage qui s'est transformé en offre d'emploi à temps plein avant même d'obtenir mon diplôme. Merci BIWI pour la préparation professionnelle pratique!"
+                    }
+                ];
+                
+                defaultComments.forEach(comment => {
+                    addCommentToDOM(comment);
+                });
+                localStorage.setItem('biwiComments', JSON.stringify(defaultComments));
+            } else {
+                savedComments.forEach(comment => {
+                    addCommentToDOM(comment);
+                });
+            }
+        }
+
+        // Add comment to DOM
+        function addCommentToDOM(comment) {
+            const commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            commentElement.innerHTML = `
+                <div class="comment-header">
+                    <div class="comment-author">${comment.name}</div>
+                    <div class="comment-date">${comment.date}</div>
+                </div>
+                <div class="comment-text">${comment.text}</div>
+            `;
+            commentsList.appendChild(commentElement);
+        }
+
+        // Comment Form Submission
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('comment-name').value;
+            const text = document.getElementById('comment-text').value;
+            
+            if (name && text) {
+                const newComment = {
+                    id: Date.now(),
+                    name: name,
+                    date: new Date().toLocaleDateString('fr-FR', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    }),
+                    text: text
+                };
+                
+                // Save to localStorage
+                const savedComments = JSON.parse(localStorage.getItem('biwiComments')) || [];
+                savedComments.unshift(newComment); // Add to beginning
+                localStorage.setItem('biwiComments', JSON.stringify(savedComments));
+                
+                // Add to DOM
+                const commentsList = document.querySelector('.comments-list');
+                const newCommentElement = document.createElement('div');
+                newCommentElement.className = 'comment';
+                newCommentElement.innerHTML = `
+                    <div class="comment-header">
+                        <div class="comment-author">${newComment.name}</div>
+                        <div class="comment-date">${newComment.date}</div>
+                    </div>
+                    <div class="comment-text">${newComment.text}</div>
+                `;
+                commentsList.insertBefore(newCommentElement, commentsList.querySelector('.comment'));
+                
+                this.reset();
+                alert('Merci pour votre commentaire!');
+            }
+        });
+
+        // Live Chat Functionality
+        const chatToggle = document.getElementById('chatToggle');
+        const chatWindow = document.getElementById('chatWindow');
+        const closeChat = document.getElementById('closeChat');
+        const sendMessage = document.getElementById('sendMessage');
+        const chatInput = document.getElementById('chatInput');
+        const chatMessages = document.getElementById('chatMessages');
+
+        chatToggle.addEventListener('click', function() {
+            chatWindow.style.display = 'flex';
+        });
+
+        closeChat.addEventListener('click', function() {
+            chatWindow.style.display = 'none';
+        });
+
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendMessage.addEventListener('click', function() {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+                
+                // Simulate bot response after a delay
+                setTimeout(() => {
+                    const responses = [
+                        "Merci pour votre message. Comment pouvons-nous vous aider davantage avec des informations sur BIWI?",
+                        "Notre équipe des admissions peut aider avec les détails des programmes. Souhaitez-vous que je vous mette en contact?",
+                        "C'est une excellente question! Laissez-moi trouver cette information pour vous concernant nos programmes commerciaux.",
+                        "BIWI offre divers programmes adaptés à vos objectifs de carrière. Souhaitez-vous en savoir plus sur nos programmes d'Administration des Affaires ou de Secrétariat Exécutif?",
+                        "Je serais heureux de vous aider avec cela. Pourriez-vous fournir plus de détails sur ce que vous recherchez?"
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse);
+                }, 1000);
+            }
+        });
+
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage.click();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '5px 0';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '15px 0';
+            }
+        });
+
+        // Initialize everything when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            // Initialize payment amounts
+            updatePaymentAmounts(selectedAmount);
+            
+            // Load alumni photos
+            loadAlumniPhotos();
+            
+            // Load comments
+            loadComments();
+        });
+    </script>
+</body>
+</html>
